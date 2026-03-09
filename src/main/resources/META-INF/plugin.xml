@@ -1,0 +1,63 @@
+<idea-plugin>
+    <id>info.angelon.SAMDevTools</id>
+
+    <name>SAMDevTools</name>
+
+    <vendor url="https://www.angelon.info">angelon</vendor>
+    <description><![CDATA[
+        Enter short description for your plugin here.<br>
+        <em>most HTML tags may be used</em>
+    ]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <group id="SAMDevTools.SubMenu"
+               text="SAMDevTools"
+               description="SAMDevTools"
+               popup="true">
+
+            <add-to-group group-id="ProjectViewPopupMenu"
+                          anchor="first"/>
+
+            <group id="SAMDevTools.Gerar"
+                   text="Gerar Codigo"
+                   description="Gerar Codigo"
+                   popup="true">
+
+                <action id="SAMDevTools.NovoRelatorio"
+                        class="info.angelon.samdevtools.actions.NovoRelatorio"
+                        text="Novo Relatorio"/>
+
+                <action id="SAMDevTools.NovaFormula"
+                        class="info.angelon.samdevtools.actions.NovaFormula"
+                        text="Nova Formula"/>
+
+                <action id="SAMDevTools.NovoServlet"
+                        class="info.angelon.samdevtools.actions.NovoServlet"
+                        text="Novo Servlet"/>
+            </group>
+
+            <group id="SAMDevTools.SAMPalm"
+                   text="SAMPalm"
+                   description="SAMPalm"
+                   popup="true">
+
+                <action id="SAMDevTools.NovaFeature"
+                        class="info.angelon.samdevtools.actions.sampalm.NovaFeature"
+                        text="Nova Feature"/>
+
+            </group>
+
+            <action id="SAMDevTools.ZiparFonte"
+                    class="info.angelon.samdevtools.actions.ZiparFonte"
+                    text="Zipar Fonte"/>
+
+            <action id="SAMDevTools.DescompactarZip"
+                    class="info.angelon.samdevtools.actions.DescompactarZip"
+                    text="Descompactar Fonte"/>
+        </group>
+    </actions>
+</idea-plugin>

@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact name="SAMDevTools">
+    <output-path>$PROJECT_DIR$/out/artifacts/SAMDevTools</output-path>
+    <root id="root" />
+  </artifact>
+</component>
