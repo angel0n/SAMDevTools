@@ -43,7 +43,7 @@ class NovaFeature : AnAction() {
             var screenFile = viewsDir.createChildData(this, "${featureNameLower}_screen.dart")
 
             dataSourceFile.setBinaryContent(getTemplateDataSource(featureNameCamel).toByteArray())
-            stateFile.setBinaryContent(getTemplateState(featureNameLower).toByteArray())
+            stateFile.setBinaryContent(getTemplateState(featureNameCamel).toByteArray())
             mainFile.setBinaryContent(getTemplateMain(featureNameCamel,featureNameLower).toByteArray())
             providerFile.setBinaryContent(getTemplateProvider(featureNameCamel,featureNameLower).toByteArray())
             screenFile.setBinaryContent(getTemplateScreen(featureNameCamel,featureNameLower).toByteArray())
@@ -67,17 +67,20 @@ class NovaFeature : AnAction() {
 
     private fun getTemplateUseCase(nameCamelCase: String, nameLower: String): String {
         return """
+            import 'package:dartz/dartz.dart';
             import 'package:sam_palm/core/exceptions/failures.dart';
             import 'package:sam_palm/features/${nameLower}/data/${nameLower}_data_source.dart';
             
             class ${nameCamelCase}UseCase {
                 late ${nameCamelCase}DataSource ${nameLower}dataSource;
 
-                ${nameCamelCase}BuscarModelosUseCase() {
+                ${nameCamelCase}UseCase() {
                     ${nameLower}dataSource = ${nameCamelCase}DataSource();
                 }
                 
-                Future<Either<Failure, void> call() async {}
+                Future<Either<Failure, void>> call() async {
+                    return Left(Failure(""));
+                }
             }
         """.trimIndent()
     }

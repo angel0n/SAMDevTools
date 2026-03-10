@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "info.angelon"
-version = "2.0-RELEASE"
+version = "2.1-RELEASE"
 
 repositories {
     mavenCentral()
